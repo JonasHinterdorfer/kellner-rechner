@@ -19,9 +19,9 @@ spec:
       - name: github
       containers:
       - name: kellner-container
-        image: ghcr.io/JonasHinterdorfer/kellner-rechner:latest
+        image: ghcr.io/jonashinterdorfer/kellner-rechner/kellner:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 80
         resources:
           limits:
             memory: "512Mi"
@@ -29,17 +29,6 @@ spec:
           requests:
             memory: "256Mi"
             cpu: "10m"
-        envFrom:
-        - secretRef:
-            name: kellner-secrets
-        volumeMounts:
-        - name: preisliste-volume
-          mountPath: /app/preisliste.json
-          subPath: preisliste.json
-      volumes:
-      - name: preisliste-volume
-        configMap:
-          name: preisliste
 ---
 apiVersion: v1
 kind: Service
@@ -52,7 +41,7 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8080
+      targetPort: 80
   type: ClusterIP
 ---
 apiVersion: traefik.io/v1alpha1
