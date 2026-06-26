@@ -1,0 +1,131 @@
+{
+  "food": [
+    {
+      "id": "f1",
+      "name": "Henderl",
+      "basePrice": 10,
+      "color": "#ff6666"
+    },
+    {
+      "id": "f2",
+      "name": "Kotelett",
+      "basePrice": 10,
+      "color": "#ff6666"
+    },
+    {
+      "id": "f3",
+      "name": "Bratwurst",
+      "basePrice": 5.5,
+      "color": "#ffffff"
+    },
+    {
+      "id": "f4",
+      "name": "Schnitzelsemmel",
+      "basePrice": 5.5,
+      "color": "#ffffff"
+    },
+    {
+      "id": "f5",
+      "name": "Gemüselaibchensemmel",
+      "basePrice": 5.5,
+      "color": "#ffffff"
+    },
+    {
+      "id": "f6",
+      "name": "Pommes",
+      "basePrice": 3.0,
+      "color": "#fff68f"
+    },
+    {
+      "id": "f7",
+      "name": "Gebäck",
+      "basePrice": 0.5
+    }
+  ],
+  "drinks": [
+    {
+      "id": "d1",
+      "name": "Bier / Radler 1/2",
+      "basePrice": 4.5,
+      "color": "#ff8866"
+    },
+    {
+      "id": "d2",
+      "name": "Limo gespr. 1/2",
+      "basePrice": 4.5,
+      "color": "#ff8866"
+    },
+    {
+      "id": "d3",
+      "name": "Limo Leitung 1/2",
+      "basePrice": 4,
+      "color": "#90d990"
+    },
+    {
+      "id": "d8",
+      "name": "Limo Flasche",
+      "basePrice": 2.8,
+      "color": "#6a8acd"
+    },
+    {
+      "id": "d15",
+      "name": "Wein 1/8",
+      "basePrice": 2,
+      "color": "#90d990"
+    },
+    {
+      "id": "d7",
+      "name": "Wein 1/4",
+      "basePrice": 4,
+      "color": "#90d990"
+    },
+    {
+      "id": "d4",
+      "name": "Gespritzter 1/4",
+      "basePrice": 2.8,
+      "color": "#6a8acd"
+    },
+    {
+      "id": "d6",
+      "name": "Gespritzer 1/2",
+      "basePrice": 5.6,
+      "color": "#6a8acd"
+    },
+    {
+      "id": "d5",
+      "name": "Sommerspritzer 1/2",
+      "basePrice": 4,
+      "color": "#90d990"
+    },
+    {
+      "id": "d10",
+      "name": "Alm/Cola/Weiß/Rot 1/4",
+      "basePrice": 3.2,
+      "color": "#d0e8ff"
+    },
+    {
+      "id": "d11",
+      "name": "Alm/Cola/Weiß/Rot 1/2",
+      "basePrice": 6.4,
+      "color": "#d0e8ff"
+    },
+    {
+      "id": "d12",
+      "name": "Mineral 1/3",
+      "basePrice": 2,
+      "color": "#90d990"
+    },
+    {
+      "id": "d13",
+      "name": "Mineral 1l",
+      "basePrice": 4.5,
+      "color": "#ff8866"
+    },
+    {
+      "id": "d14",
+      "name": "Wein 1l",
+      "basePrice": 14,
+      "color": "#ff99cc"
+    }
+  ]
+}

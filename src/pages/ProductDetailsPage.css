@@ -1,0 +1,50 @@
+.product-details-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.details-header {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  background-color: #2c7be5;
+  color: white;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  left: 15px;
+}
+
+.done-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  right: 15px;
+}
+.details-header h1 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 30px;
+  font-style: italic;
+  color: #666;
+}

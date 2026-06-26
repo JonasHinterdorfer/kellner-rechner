@@ -1,0 +1,144 @@
+{
+  "food": [
+    {
+      "id": "f1",
+      "name": "Hendl",
+      "basePrice": 9.50,
+      "color": "#FFEBCD",
+      "options": [
+        {"name": "Halbes Hendl", "price": 9.50},
+        {"name": "Ganzes Hendl", "price": 16.00, "color": "#FFDAB9"},
+        {"name": "Hendl mit Semmel", "price": 11.00}
+      ]
+    },
+    {
+      "id": "f2",
+      "name": "Schnitzelsemmel",
+      "basePrice": 5.80,
+      "color": "#FFEFC1"
+    },
+    {
+      "id": "f3",
+      "name": "Pommes",
+      "basePrice": 3.50,
+      "color": "#FFD700",
+      "options": [
+        {"name": "Klein", "price": 3.50},
+        {"name": "Groß", "price": 4.50},
+        {"name": "Mit Ketchup/Mayo", "price": 4.00}
+      ]
+    },
+    {
+      "id": "f4",
+      "name": "Grillwurst",
+      "basePrice": 4.20,
+      "color": "#FFCCCB",
+      "options": [
+        {"name": "Bratwurst", "price": 4.20},
+        {"name": "Käsekrainer", "price": 4.50},
+        {"name": "Debreziner", "price": 4.20}
+      ]
+    },
+    {
+      "id": "f5",
+      "name": "Leberkässemmel",
+      "basePrice": 4.00,
+      "color": "#FFE4E1",
+      "options": [
+        {"name": "Klassisch", "price": 4.00},
+        {"name": "Mit Gurkerl", "price": 4.30},
+        {"name": "Mit Kren", "price": 4.30}
+      ]
+    },
+    {
+      "id": "f6",
+      "name": "Langos",
+      "basePrice": 4.80,
+      "color": "#DEB887",
+      "options": [
+        {"name": "Mit Knoblauch", "price": 4.80},
+        {"name": "Mit Käse", "price": 5.50},
+        {"name": "Mit Sauerrahm", "price": 5.50}
+      ]
+    }
+  ],
+  "drinks": [
+    {
+      "id": "d1",
+      "name": "Bier",
+      "basePrice": 4.20,
+      "color": "#F0E68C",
+      "options": [
+        {"name": "Krügerl (0,5L)", "price": 4.20, "color": "#F5DEB3"},
+        {"name": "Seidl (0,3L)", "price": 3.50},
+        {"name": "Radler (0,5L)", "price": 4.20, "color": "#FAFAD2"}
+      ]
+    },
+    {
+      "id": "d2",
+      "name": "Cola",
+      "basePrice": 3.50,
+      "color": "#D2B48C",
+      "options": [
+        {"name": "Cola Rot (0,5L)", "price": 3.50},
+        {"name": "Cola Weiß (0,5L)", "price": 3.50},
+        {"name": "Cola Rot (0,3L)", "price": 2.80},
+        {"name": "Cola Weiß (0,3L)", "price": 2.80}
+      ]
+    },
+    {
+      "id": "d3",
+      "name": "Softdrinks",
+      "basePrice": 3.50,
+      "color": "#FFDAB9"
+    },
+    {
+      "id": "d4",
+      "name": "Mineral",
+      "basePrice": 2.80,
+      "color": "#E0FFFF",
+      "options": [
+        {"name": "Prickelnd (0,5L)", "price": 2.80},
+        {"name": "Still (0,5L)", "price": 2.80},
+        {"name": "Prickelnd (0,3L)", "price": 2.20},
+        {"name": "Still (0,3L)", "price": 2.20}
+      ]
+    },
+    {
+      "id": "d5",
+      "name": "Gespritzt",
+      "basePrice": 3.00,
+      "color": "#FFDAB9",
+      "options": [
+        {"name": "Apfelsaft g'spritzt", "price": 3.00},
+        {"name": "Johannisbeer g'spritzt", "price": 3.20},
+        {"name": "Himbeer g'spritzt", "price": 3.20},
+        {"name": "Holler g'spritzt", "price": 3.20}
+      ]
+    },
+    {
+      "id": "d6",
+      "name": "Spritzer",
+      "basePrice": 3.80,
+      "color": "#FFE4E1",
+      "options": [
+        {"name": "Weißer Spritzer", "price": 3.80},
+        {"name": "Aperol Spritzer", "price": 4.50},
+        {"name": "Hugo", "price": 4.50},
+        {"name": "G'spritzter süß", "price": 3.80}
+      ]
+    },
+    {
+      "id": "d7",
+      "name": "Schnaps",
+      "basePrice": 3.00,
+      "color": "#E6E6FA",
+      "options": [
+        {"name": "Marille (2cl)", "price": 3.00},
+        {"name": "Williams (2cl)", "price": 3.00},
+        {"name": "Haselnuss (2cl)", "price": 3.00},
+        {"name": "Obstler (2cl)", "price": 2.80}
+      ]
+    }
+  ]
+}

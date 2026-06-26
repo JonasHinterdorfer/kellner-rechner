@@ -1,0 +1,71 @@
+{
+  "food": [
+    {
+      "id": "f2",
+      "name": "Kotelettsemmel",
+      "basePrice": 5.0,
+      "color": "#ff6666"
+    },
+    {
+      "id": "f3",
+      "name": "Grillwurst/Käsekrainer",
+      "basePrice": 5.0,
+      "color": "#ffffff"
+    },
+    {
+      "id": "f6",
+      "name": "Pommes",
+      "basePrice": 2.5,
+      "color": "#fff68f"
+    },
+    {
+      "id": "f7",
+      "name": "Semmel (extra)",
+      "basePrice": 0.5
+    }
+  ],
+  "drinks": [
+    {
+      "id": "d1",
+      "name": "Bier / Radler 1/2",
+      "basePrice": 4.0,
+      "color": "#ff8866"
+    },
+    {
+      "id": "d2",
+      "name": "Bier / Radler 1/3",
+      "basePrice": 3.5,
+      "color": "#ff8866"
+    },
+    {
+      "id": "d4",
+      "name": "Gespritzter 1/4",
+      "basePrice": 2.5,
+      "color": "#6a8acd"
+    },
+    {
+      "id": "d8",
+      "name": "Limo Flasche 1/3",
+      "basePrice": 2.5,
+      "color": "#6a8acd"
+    },
+    {
+      "id": "d12",
+      "name": "Mineral 1/4",
+      "basePrice": 1.0,
+      "color": "#90d990"
+    },
+    {
+      "id": "d5",
+      "name": "Sommerspritzer 1/2",
+      "basePrice": 3.0,
+      "color": "#90d990"
+    },
+    {
+      "id": "d15",
+      "name": "Wein 1/8",
+      "basePrice": 2.0,
+      "color": "#90d990"
+    }
+  ]
+}
