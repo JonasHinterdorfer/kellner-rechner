@@ -61,10 +61,6 @@ jobs:
             --namespace kellner-rechner \
             --dry-run=client -o yaml | kubectl apply -f -
 
-      - name: Apply core deployment manifest
-        run: |
-          kubectl apply -f core.yaml
-
       - name: Rollout restart deployment
         run: |
           kubectl rollout restart deployment/kellner-deployment \
