@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kellner-deployment
+  namespace: kellner-rechner
+  labels:
+    app: kellner
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kellner
+  template:
+    metadata:
+      labels:
+        app: kellner
+    spec:
+      imagePullSecrets:
+      - name: github
+      containers:
+      - name: kellner-container
+        image: ghcr.io/JonasHinterdorfer/kellner-rechner:latest
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "50m"
+          requests:
+            memory: "256Mi"
+            cpu: "10m"
+        envFrom:
+        - secretRef:
+            name: kellner-secrets
+        volumeMounts:
+        - name: preisliste-volume
+          mountPath: /app/preisliste.json
+          subPath: preisliste.json
+      volumes:
+      - name: preisliste-volume
+        configMap:
+          name: preisliste
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kellner-service
+  namespace: kellner-rechner
+spec:
+  selector:
+    app: kellner
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: ClusterIP
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: kellner-ingress
+  namespace: kellner-rechner
+spec:
+  entryPoints:
+  - websecure
+  routes:
+  - kind: Rule
+    match: Host(`kellner.hinterdorfer.dev`)
+    services:
+    - name: kellner-service
+      port: 80
+  tls:
+    certResolver: le
