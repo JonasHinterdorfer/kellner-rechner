@@ -16,9 +16,24 @@
   margin-bottom: 8px;
 }
 
+.count-column {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.count-column.right {
+  text-align: right;
+}
+
 .food-count, .drink-count {
   font-weight: 500;
   font-size: 0.9rem;
+}
+
+.table-count {
+  font-size: 0.8rem;
+  color: #666;
 }
 
 .total-price {
@@ -29,6 +44,14 @@
   color: #2c7be5;
 }
 
+.table-total-price {
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 4px;
+  color: #4caf50;
+  font-weight: 500;
+}
+
 .cart-actions {
   display: flex;
   flex-direction: column;
@@ -36,7 +59,24 @@
   margin-bottom: 16px;
 }
 
-.calculate-change-button, .clear-cart-button {
+.table-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.table-actions .toggle-table-button,
+.table-actions .view-table-button,
+.table-actions .calculate-change-button {
+  flex: 1;
+  min-width: 100px;
+}
+
+.calculate-change-button,
+.clear-cart-button,
+.toggle-table-button,
+.view-table-button,
+.clear-table-button {
   width: 100%;
   padding: 10px;
   border: none;
@@ -45,6 +85,14 @@
   font-size: 0.95rem;
   cursor: pointer;
   transition: background-color 0.2s;
+}
+
+.calculate-change-button:disabled,
+.clear-cart-button:disabled,
+.view-table-button:disabled,
+.clear-table-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .calculate-change-button {
@@ -57,12 +105,47 @@
   color: white;
 }
 
+.toggle-table-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.toggle-table-button.active {
+  background-color: #4caf50;
+}
+
+.view-table-button {
+  background-color: #607d8b;
+  color: white;
+}
+
+.clear-table-button {
+  background-color: #ff9800;
+  color: white;
+}
+
 .calculate-change-button:active {
   background-color: #1b5eb5;
 }
 
 .clear-cart-button:active {
   background-color: #e53935;
+}
+
+.toggle-table-button:active {
+  background-color: #388e3c;
+}
+
+.toggle-table-button.active:active {
+  background-color: #388e3c;
+}
+
+.view-table-button:active {
+  background-color: #455a64;
+}
+
+.clear-table-button:active {
+  background-color: #f57c00;
 }
 
 .cart-items {
@@ -110,6 +193,11 @@
   gap: 8px;
 }
 
+.item-quantity.static {
+  font-weight: 500;
+  color: #333;
+}
+
 .item-quantity button {
   width: 26px;
   height: 26px;
@@ -132,4 +220,86 @@
   color: #888;
   font-style: italic;
   font-size: 0.9rem;
+}
+
+/* Table modal */
+.table-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 1000;
+}
+
+.table-modal {
+  background-color: white;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.table-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.table-modal-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.close-modal-button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.close-modal-button:active {
+  background-color: #e0e0e0;
+}
+
+.table-modal-summary {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f7f9fc;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
+.table-modal-total {
+  font-weight: bold;
+  color: #2c7be5;
+}
+
+.empty-table {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-style: italic;
+}
+
+.table-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }

@@ -11,24 +11,44 @@ type CartContextType = {
   getTotalPrice: () => number;
   getFoodCount: () => number;
   getDrinksCount: () => number;
+  // Table state
+  tableItems: CartItem[];
+  isTableActive: boolean;
+  setTableActive: (active: boolean) => void;
+  addToTable: (item: CartItem) => void;
+  clearTable: () => void;
+  getTableTotalPrice: () => number;
+  getTableFoodCount: () => number;
+  getTableDrinksCount: () => number;
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [tableItems, setTableItems] = useState<CartItem[]>([]);
+  const [isTableActive, setIsTableActive] = useState(false); // table inactive by default
 
-  const addToCart = (item: CartItem) => {
-    const existingItemIndex = cartItems.findIndex(
+  const mergeItem = (items: CartItem[], item: CartItem): CartItem[] => {
+    const existingItemIndex = items.findIndex(
       i => i.productId === item.productId && i.selectedOption.name === item.selectedOption.name
     );
 
     if (existingItemIndex !== -1) {
-      const updatedItems = [...cartItems];
-      updatedItems[existingItemIndex].quantity += item.quantity;
-      setCartItems(updatedItems);
-    } else {
-      setCartItems([...cartItems, item]);
+      const updatedItems = [...items];
+      updatedItems[existingItemIndex] = {
+        ...updatedItems[existingItemIndex],
+        quantity: updatedItems[existingItemIndex].quantity + item.quantity
+      };
+      return updatedItems;
+    }
+    return [...items, item];
+  };
+
+  const addToCart = (item: CartItem) => {
+    setCartItems(prev => mergeItem(prev, item));
+    if (isTableActive) {
+      setTableItems(prev => mergeItem(prev, item));
     }
   };
 
@@ -81,6 +101,51 @@ export function CartProvider({ children }: { children: ReactNode }) {
       .reduce((count, item) => count + item.quantity, 0);
   };
 
+  // Table helpers
+  const setTableActive = (active: boolean) => {
+    if (active && !isTableActive) {
+      // Wenn Tisch aktiviert wird, übernehme aktuellen Warenkorb
+      setTableItems(prev => {
+        let merged = [...prev];
+        for (const item of cartItems) {
+          merged = mergeItem(merged, item);
+        }
+        return merged;
+      });
+    } else if (!active && isTableActive) {
+      // Wenn Tisch deaktiviert wird, leere den Tisch
+      setTableItems([]);
+    }
+    setIsTableActive(active);
+  };
+
+  const addToTable = (item: CartItem) => {
+    setTableItems(prev => mergeItem(prev, item));
+  };
+
+  const clearTable = () => {
+    setTableItems([]);
+  };
+
+  const getTableTotalPrice = () => {
+    return tableItems.reduce(
+      (total, item) => total + item.selectedOption.price * item.quantity,
+      0
+    );
+  };
+
+  const getTableFoodCount = () => {
+    return tableItems
+      .filter(item => item.category === 'food')
+      .reduce((count, item) => count + item.quantity, 0);
+  };
+
+  const getTableDrinksCount = () => {
+    return tableItems
+      .filter(item => item.category === 'drinks')
+      .reduce((count, item) => count + item.quantity, 0);
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -92,7 +157,15 @@ export function CartProvider({ children }: { children: ReactNode }) {
         clearCart,
         getTotalPrice,
         getFoodCount,
-        getDrinksCount
+        getDrinksCount,
+        tableItems,
+        isTableActive,
+        setTableActive,
+        addToTable,
+        clearTable,
+        getTableTotalPrice,
+        getTableFoodCount,
+        getTableDrinksCount
       }}
     >
       {children}
